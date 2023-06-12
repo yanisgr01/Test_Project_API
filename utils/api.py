@@ -1,13 +1,11 @@
 from utils.http_methods import Http_method
 
-"""Методы для тестирования Google maps api"""
 
-base_url = "https://rahulshettyacademy.com"  # Базовая URL
-key = "?key=qaclick123"  # Параметр для всех запросов
+base_url = "https://rahulshettyacademy.com"
+key = "?key=qaclick123"
 
 
 class Google_maps_api():
-    """Метод для создания новой локации"""
 
     @staticmethod
     def create_new_place():
@@ -28,14 +26,12 @@ class Google_maps_api():
              }
 
 
-        post_resource = "/maps/api/place/add/json"  # Ресурс метода Post
+        post_resource = "/maps/api/place/add/json"
         post_url = base_url + post_resource + key
         print(post_url)
         result_post = Http_method.post(post_url, json_for_create_new_place)
         print(result_post.text)
         return result_post
-
-    """Метод для проверки новой локации"""
 
     @staticmethod
     def get_new_place(place_id):
@@ -46,8 +42,6 @@ class Google_maps_api():
         result_get = Http_method.get(get_url)
         print(result_get.text)
         return result_get
-
-    """Метод для изменения новой локации"""
 
     @staticmethod
     def put_new_place(place_id):
@@ -63,8 +57,6 @@ class Google_maps_api():
         result_put = Http_method.put(put_url, json_for_update_new_location)
         print(result_put.text)
         return result_put
-
-    """Метод для удаления новой локации"""
 
     @staticmethod
     def delete_new_place(place_id):
