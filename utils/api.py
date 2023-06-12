@@ -16,7 +16,7 @@ class Google_maps_api():
             }, "accuracy": 50,
             "name": "Frontline house",
             "phone_number": "(+91)983 893 3937",
-            "address": "28,side layout,cohen 09",
+            "address": "29,side layout,cohen 09",
             "types": [
              "shoe park",
             "shop"
